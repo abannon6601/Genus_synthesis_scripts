@@ -1,20 +1,25 @@
+#set <items> to your project settings and files 
+
 #Set the search paths to the libraries and the HDL files
-set_attribute hdl_search_path {./local_test_git/Verilog_SAR/src/DDR3} 
-set_attribute lib_search_path {./.xkit/20190318_151159/xc018/diglibs/D_CELLS/liberty_MOSST/PVT_1_80V_range}
-set_attribute library [list D_CELLS_MOSST_fast_1_98V_125C.lib]
+set_attribute hdl_search_path {<path to hdl files>} 
+set_attribute lib_search_path {<path to lib files>}
+set_attribute library [list <lib files>]
 set_attribute information_level 6 
-set_attribute hdl_error_on_blackbox true
 
-#set myFiles [list *.v]  ;# All HDL files
+#optional. Comment this line if you accept blacboxes
+set_attribute hdl_error_on_blackbox true 
 
-set myFiles [glob -directory ./local_test_git/Verilog_SAR/src/DDR3 *.v]
 
-set basename top   		 ;# name of top level module
-set myClk clk                    ;# clock name
-set myPeriod_ps 16000             ;# Clock period in ps
-set myInDelay_ns 1000            ;# delay from clock to inputs valid
-set myOutDelay_ns 10000           ;# delay from clock to output valid
-set runname gen_test             ;# name appended to output files
+#Uncomment one of the next lines for specific files, or all files in a directory
+#set myFiles [list <hdl files>]; # 
+#set myFiles [glob -directory <path to hdl files> *.v];
+
+set basename <name of top level module>;
+set myClk clk <clock name>;
+set myPeriod_ps <clock period (ps)>;
+set myInDelay_ns <delay from clock to inputs valid (ps);
+set myOutDelay_ns <delay from clock to output valid (ps)>;
+set runname <name appended to output files>;
 
 
 
