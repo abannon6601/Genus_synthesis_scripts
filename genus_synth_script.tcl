@@ -1,7 +1,11 @@
+#written by Alan Bannon
+#based off of work by Erik Brunvand and many other users on edaboard forums
+
 #set <items> to your project settings and files 
 
 #Set the search paths to the libraries and the HDL files
 set_attribute hdl_search_path {<path to hdl files>} 
+set_attribute lib_search_path {<path to lib files>}
 set_attribute lib_search_path {<path to lib files>}
 set_attribute library [list <lib files>]
 set_attribute information_level 6 
@@ -17,7 +21,7 @@ set_attribute hdl_error_on_blackbox true
 set basename <name of top level module>;
 set myClk clk <clock name>;
 set myPeriod_ps <clock period (ps)>;
-set myInDelay_ns <delay from clock to inputs valid (ps);
+set myInDelay_ns <delay from clock to inputs valid (ps)>;
 set myOutDelay_ns <delay from clock to output valid (ps)>;
 set runname <name appended to output files>;
 
